@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route} from 'react-router-dom'
+import MovieIndex from './components/pages/MovieIndex'
+import MovieDetails from './components/pages/MovieDetails'
+import FavoriteList from './components/pages/FavoriteList'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <p> Maybe this </p>
+    <BrowserRouter> 
+      <Route path = '/movies' component = {MovieIndex}/>
+      <Route path = '/movie' component = {MovieDetails}/>
+      <Route path = '/favorites' component = {FavoriteList}/>
+    </BrowserRouter>
+    </>
+
   );
 }
 
 export default App;
+
+/* <div>
+    <h1>Hello World</h1>
+    <MovieIndex/>
+    <MovieDetails/>
+    <FavoriteList/>
+    </div> */
